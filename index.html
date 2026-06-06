@@ -3,60 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard</title>
+<title>Fesraoui Corp</title>
+
 <style>
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial,sans-serif;
+}
+
+body{
 background:#050816;
 color:white;
+display:flex;
+min-height:100vh;
 }
+
 .sidebar{
-position:fixed;
-left:0;
-top:0;
-width:240px;
-height:100vh;
+width:250px;
 background:#0b1120;
 padding:20px;
 }
+
+.logo{
+font-size:24px;
+font-weight:bold;
+margin-bottom:30px;
+}
+
+.menu div{
+padding:12px;
+margin-bottom:10px;
+background:#111827;
+border-radius:10px;
+}
+
 .content{
-margin-left:260px;
+flex:1;
 padding:30px;
 }
+
 .cards{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px;
+margin-top:20px;
 }
+
 .card{
 background:#111827;
 padding:20px;
 border-radius:15px;
 }
-h2{
+
+.value{
+font-size:30px;
 color:#6d5dfe;
+margin-top:10px;
 }
 </style>
 </head>
+
 <body>
 
 <div class="sidebar">
-<h2>Fesraoui Corp</h2>
-<p>🏠 Dashboard</p>
-<p>📈 Revenus</p>
-<p>👥 Utilisateurs</p>
-<p>📦 Produits</p>
+<div class="logo">Fesraoui Corp</div>
+
+<div class="menu">
+<div>🏠 Tableau de bord</div>
+<div>📈 Revenus</div>
+<div>👥 Utilisateurs</div>
+<div>📦 Produits</div>
+<div>📄 Rapports</div>
+</div>
 </div>
 
 <div class="content">
-<h1>Bonjour Anes 👋</h1>
+
+<h1>Bonjour, Fesraoui Anes 👋</h1>
 
 <div class="cards">
-<div class="card"><h2>€12,450</h2><p>Revenu du mois</p></div>
-<div class="card"><h2>€2,880</h2><p>Cette semaine</p></div>
-<div class="card"><h2>€420</h2><p>Aujourd'hui</p></div>
-<div class="card"><h2>1240</h2><p>Utilisateurs</p></div>
+
+<div class="card">
+<div>Revenu du mois</div>
+<div class="value">€12,450</div>
+</div>
+
+<div class="card">
+<div>Semaine</div>
+<div class="value">€2,880</div>
+</div>
+
+<div class="card">
+<div>Aujourd'hui</div>
+<div class="value">€420</div>
+</div>
+
+<div class="card">
+<div>Utilisateurs</div>
+<div class="value">1,240</div>
+</div>
+
 </div>
 
 </div>
