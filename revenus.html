@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revenus</title>
 
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">⬢ Fesraoui Corp</div>
+
+<button class="menu"
+onclick="location.href='index.html'">
+🏠 Tableau de bord
+</button>
+
+<button class="menu active">
+📈 Revenus
+</button>
+
+<button class="menu"
+onclick="location.href='utilisateurs.html'">
+👥 Utilisateurs
+</button>
+
+<button class="menu"
+onclick="location.href='parametres.html'">
+⚙️ Paramètres
+</button>
+
+</div>
+
+<div class="main">
+
+<h1>📈 Revenus</h1>
+
+<br>
+
+<div class="panel">
+
+<h3>Historique des revenus</h3>
+
+<canvas id="revenueChart"></canvas>
+
+</div>
+
+</div>
+
+<script>
+
+new Chart(
+document.getElementById("revenueChart"),
+{
+type:"bar",
+data:{
+labels:[
+"Jan",
+"Fev",
+"Mar",
+"Avr",
+"Mai",
+"Juin"
+],
+datasets:[{
+label:"Revenus",
+data:[
+4200,
+6800,
+9200,
+10800,
+12450,
+14800
+],
+backgroundColor:"#7c3aed"
+}]
+}
+}
+);
+
+</script>
+
+</body>
+</html>
