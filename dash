@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#050816;
+color:white;
+}
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:240px;
+height:100vh;
+background:#0b1120;
+padding:20px;
+}
+.content{
+margin-left:260px;
+padding:30px;
+}
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+.card{
+background:#111827;
+padding:20px;
+border-radius:15px;
+}
+h2{
+color:#6d5dfe;
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+<h2>Fesraoui Corp</h2>
+<p>🏠 Dashboard</p>
+<p>📈 Revenus</p>
+<p>👥 Utilisateurs</p>
+<p>📦 Produits</p>
+</div>
+
+<div class="content">
+<h1>Bonjour Anes 👋</h1>
+
+<div class="cards">
+<div class="card"><h2>€12,450</h2><p>Revenu du mois</p></div>
+<div class="card"><h2>€2,880</h2><p>Cette semaine</p></div>
+<div class="card"><h2>€420</h2><p>Aujourd'hui</p></div>
+<div class="card"><h2>1240</h2><p>Utilisateurs</p></div>
+</div>
+
+</div>
+
+</body>
+</html>
