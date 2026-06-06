@@ -354,3 +354,42 @@ grid-template-columns:1fr;
 }
 
 }
+.top-right{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.profile{
+display:flex;
+align-items:center;
+gap:12px;
+background:#0f172a;
+padding:10px 15px;
+border-radius:15px;
+border:1px solid #1e293b;
+}
+
+.profile-avatar{
+width:42px;
+height:42px;
+border-radius:50%;
+background:linear-gradient(
+135deg,
+#7c3aed,
+#2563eb
+);
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+}
+
+.profile-name{
+font-weight:600;
+}
+
+.profile-role{
+font-size:12px;
+color:#94a3b8;
+}
