@@ -3,335 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fesraoui Corp Dashboard</title>
 
-<style>
+<title>Fesraoui Corp</title>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter,Arial,sans-serif;
-}
+<link rel="stylesheet" href="style.css">
 
-body{
-background:#040816;
-color:white;
-display:flex;
-height:100vh;
-overflow:hidden;
-}
-
-/* SIDEBAR */
-
-.sidebar{
-width:260px;
-background:#060b17;
-border-right:1px solid #10182b;
-padding:25px;
-display:flex;
-flex-direction:column;
-}
-
-.logo{
-font-size:28px;
-font-weight:700;
-margin-bottom:35px;
-color:white;
-}
-
-.logo span{
-color:#7c3aed;
-}
-
-.section-title{
-font-size:11px;
-letter-spacing:1px;
-opacity:.5;
-margin-top:20px;
-margin-bottom:10px;
-}
-
-.menu{
-display:flex;
-flex-direction:column;
-gap:8px;
-}
-
-.menu button{
-background:none;
-border:none;
-color:white;
-text-align:left;
-padding:12px 14px;
-border-radius:12px;
-cursor:pointer;
-transition:.25s;
-font-size:15px;
-}
-
-.menu button:hover{
-background:#121b30;
-}
-
-.menu .active{
-background:linear-gradient(90deg,#6d28d9,#4338ca);
-}
-
-/* MAIN */
-
-.main{
-flex:1;
-overflow:auto;
-padding:30px;
-}
-
-.header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:30px;
-}
-
-.welcome h1{
-font-size:42px;
-font-weight:700;
-}
-
-.welcome p{
-margin-top:8px;
-opacity:.7;
-}
-
-.top-actions{
-display:flex;
-gap:12px;
-}
-
-.icon-btn{
-width:45px;
-height:45px;
-border:none;
-border-radius:12px;
-background:#0d1426;
-color:white;
-cursor:pointer;
-font-size:18px;
-}
-
-.profile{
-padding:10px 16px;
-background:#0d1426;
-border-radius:12px;
-}
-
-/* KPI */
-
-.kpis{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-margin-bottom:25px;
-}
-
-.card{
-background:#0a1020;
-border:1px solid #141f36;
-border-radius:20px;
-padding:20px;
-box-shadow:0 0 20px rgba(0,0,0,.3);
-}
-
-.card h4{
-opacity:.7;
-font-weight:500;
-margin-bottom:10px;
-}
-
-.value{
-font-size:38px;
-font-weight:700;
-margin-bottom:10px;
-}
-
-.gain{
-display:inline-block;
-background:#083d28;
-color:#00ff8f;
-padding:6px 10px;
-border-radius:10px;
-font-size:13px;
-}
-
-/* CONTENT */
-
-.grid{
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:20px;
-}
-
-.big-card{
-height:420px;
-background:#0a1020;
-border:1px solid #141f36;
-border-radius:20px;
-padding:20px;
-}
-
-.chart-placeholder{
-height:320px;
-margin-top:20px;
-border-radius:15px;
-background:
-linear-gradient(
-180deg,
-rgba(109,40,217,.2),
-rgba(109,40,217,0)
-);
-border:1px solid rgba(109,40,217,.3);
-display:flex;
-align-items:center;
-justify-content:center;
-color:#8b5cf6;
-font-size:20px;
-}
-
-.donut{
-width:220px;
-height:220px;
-margin:30px auto;
-border-radius:50%;
-background:
-conic-gradient(
-#6d28d9 0% 45%,
-#2563eb 45% 75%,
-#10b981 75% 95%,
-#f59e0b 95% 100%
-);
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.donut::before{
-content:"€12,450";
-display:flex;
-align-items:center;
-justify-content:center;
-width:140px;
-height:140px;
-border-radius:50%;
-background:#0a1020;
-font-size:28px;
-font-weight:700;
-}
-
-@media(max-width:1200px){
-
-.kpis{
-grid-template-columns:repeat(2,1fr);
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
-}
-
-</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
+
 <body>
 
 <div class="sidebar">
 
 <div class="logo">
-<span>⬢</span> Fesraoui Corp
+⬢ Fesraoui Corp
 </div>
 
-<div class="section-title">ANALYTIQUES</div>
+<div class="menu-title">ANALYTIQUES</div>
 
-<div class="menu">
-<button class="active">🏠 Tableau de bord</button>
-<button>📈 Revenus</button>
-<button>👥 Utilisateurs</button>
-<button>📦 Produits</button>
-<button>📄 Rapports</button>
+<button class="menu active">🏠 Tableau de bord</button>
+<button class="menu">📈 Revenus</button>
+<button class="menu">👥 Utilisateurs</button>
+<button class="menu">📦 Produits</button>
+<button class="menu">📄 Rapports</button>
+
+<div class="menu-title">OUTILS</div>
+
+<button class="menu">📢 Campagnes</button>
+<button class="menu">✉️ Emails</button>
+<button class="menu">⚙️ Automatisations</button>
+<button class="menu">🌐 Pages</button>
+
+<div class="user-box">
+<div class="avatar">FA</div>
+<div>
+<b>Fesraoui Anes</b>
+<br>
+<span>Admin</span>
 </div>
-
-<div class="section-title">OUTILS</div>
-
-<div class="menu">
-<button>📣 Campagnes</button>
-<button>✉️ Emails</button>
-<button>⚙️ Automatisations</button>
-<button>🌐 Pages</button>
 </div>
 
 </div>
 
 <div class="main">
 
-<div class="header">
+<div class="topbar">
 
-<div class="welcome">
+<div>
 <h1>Bonjour, Fesraoui Anes 👋</h1>
 <p>Voici un aperçu de ton activité.</p>
 </div>
 
-<div class="top-actions">
-<button class="icon-btn">🔍</button>
-<button class="icon-btn">🔔</button>
-<div class="profile">FA</div>
-</div>
+<div class="top-icons">
+
+<button id="notifBtn">🔔</button>
+<button>🔍</button>
 
 </div>
 
-<div class="kpis">
+</div>
 
-<div class="card">
+<div class="stats">
+
+<div class="card purple">
 <h4>Revenu du dernier mois</h4>
-<div class="value">€12,450</div>
-<span class="gain">+18.2%</span>
+<h2>€12,450</h2>
+<span>+18.2%</span>
 </div>
 
-<div class="card">
+<div class="card blue">
 <h4>Dernière semaine</h4>
-<div class="value">€2,880</div>
-<span class="gain">+11.7%</span>
+<h2>€2,880</h2>
+<span>+11.7%</span>
 </div>
 
-<div class="card">
+<div class="card green">
 <h4>Dernier jour</h4>
-<div class="value">€420</div>
-<span class="gain">+7.3%</span>
+<h2>€420</h2>
+<span>+7.3%</span>
 </div>
 
-<div class="card">
+<div class="card orange">
 <h4>Utilisateurs actifs</h4>
-<div class="value">1,240</div>
-<span class="gain">+9.4%</span>
+<h2>1,240</h2>
+<span>+9.4%</span>
 </div>
 
 </div>
 
 <div class="grid">
 
-<div class="big-card">
-<h2>Revenus</h2>
+<div class="panel">
 
-<div class="chart-placeholder">
-Graphique interactif (étape suivante)
+<div class="panel-header">
+<h3>Revenus</h3>
+<select>
+<option>Mensuel</option>
+<option>Hebdomadaire</option>
+</select>
+</div>
+
+<canvas id="revenueChart"></canvas>
+
+</div>
+
+<div class="panel">
+
+<h3>Répartition des revenus</h3>
+
+<canvas id="pieChart"></canvas>
+
 </div>
 
 </div>
 
-<div class="big-card">
+<div class="bottom-grid">
 
-<h2>Répartition des revenus</h2>
+<div class="panel">
 
-<div class="donut"></div>
+<h3>Meilleures offres</h3>
+
+<table>
+
+<tr>
+<th>Offre</th>
+<th>Abonnés</th>
+<th>Revenu</th>
+</tr>
+
+<tr>
+<td>Pro Plan</td>
+<td>432</td>
+<td>€6,480</td>
+</tr>
+
+<tr>
+<td>Business</td>
+<td>286</td>
+<td>€4,290</td>
+</tr>
+
+<tr>
+<td>Starter</td>
+<td>152</td>
+<td>€1,680</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="panel">
+
+<h3>Conversions</h3>
+
+<div class="conversion">
+<h2>6.8%</h2>
+<p>+1.3%</p>
+</div>
+
+</div>
+
+<div class="panel">
+
+<h3>Activité récente</h3>
+
+<ul class="activity">
+<li>✅ Nouveau client premium</li>
+<li>💰 Paiement reçu</li>
+<li>👤 Nouvel utilisateur</li>
+<li>❌ Abonnement annulé</li>
+</ul>
 
 </div>
 
@@ -339,32 +182,7 @@ Graphique interactif (étape suivante)
 
 </div>
 
-<script>
-
-document.querySelectorAll(".menu button")
-.forEach(btn=>{
-
-btn.addEventListener("click",()=>{
-
-document
-.querySelectorAll(".menu button")
-.forEach(x=>x.classList.remove("active"));
-
-btn.classList.add("active");
-
-});
-
-});
-
-document
-.querySelector(".icon-btn:nth-child(2)")
-.addEventListener("click",()=>{
-
-alert("Aucune nouvelle notification");
-
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
